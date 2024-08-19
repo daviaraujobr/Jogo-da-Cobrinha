@@ -2,28 +2,31 @@ import pygame as pg
 import time
 
 # Default game colors
-white   = (255, 255, 255)
-gray    = (150, 150, 150)
-black   = (  0,   0,   0)
-red     = (255,   0,   0)
-green   = (  0, 255,   0)
-blue    = (  0,   0, 255)
+white = (255, 255, 255)
+gray = (150, 150, 150)
+black = (0,   0,   0)
+red = (255,   0,   0)
+green = (0, 255,   0)
+blue = (0,   0, 255)
+
 
 class Window:
-    def __init__(self, screen_resolution='HD', window_title='New Game', icon=None, fps=60):
+    def __init__(self, screen_resolution='HD', window_title='New Game', icon=None, fps=144):
         # Window valiables
         self.resolutions = {
             'HD': (1280, 720),
             'FHD': (1920, 1080)
         }
         try:
-            self.window = pg.display.set_mode(self.resolutions[screen_resolution])
+            self.window = pg.display.set_mode(
+                self.resolutions[screen_resolution])
         except:
             self.window = pg.display.set_mode(screen_resolution)
         # pg.display.set_caption(title=self.window_title, icontitle=self.icon)
 
         # Mouse Infos
-        self.mouse_0 = {'x': None, 'y': None, 'left button': None, 'clicked': False}
+        self.mouse_0 = {'x': None, 'y': None,
+                        'left button': None, 'clicked': False}
         self.mouse = ((0, 0), (False, False, False), (False, False, False))
 
         # Others variables
@@ -41,17 +44,17 @@ class Window:
         self.colors = {
             'white':            (255, 255, 255),
             'gray':             (150, 150, 150),
-            'black':            (  0,   0,   0),
+            'black':            (0,   0,   0),
             'red':              (255,   0,   0),
-            'red light 1':      ( 50, 100,  50),
+            'red light 1':      (50, 100,  50),
             'red light 2':      (100, 150, 100),
             'red light 3':      (150, 200, 150),
-            'green':            (  0, 255,   0),
-            'green light 1':    ( 50, 255,  50),
+            'green':            (0, 255,   0),
+            'green light 1':    (50, 255,  50),
             'green light 2':    (100, 255, 100),
             'green light 3':    (150, 255, 150),
-            'blue':             (  0,   0, 255),
-            'blue light 1':     ( 50,  50, 255),
+            'blue':             (0,   0, 255),
+            'blue light 1':     (50,  50, 255),
             'blue light 2':     (100, 100, 255),
             'blue light 3':     (150, 150, 255)
         }
@@ -85,10 +88,12 @@ class Window:
     # Draw #########################################################################################
 
     def clear_window(self, color, alpha=128):
-        pg.draw.rect(self.window, color, (0, 0, self.window.get_width(), self.window.get_height()))
+        pg.draw.rect(self.window, color,
+                     (0, 0, self.window.get_width(), self.window.get_height()))
 
     def transparent_background(self, color):
-        surface = pg.Surface((self.window.get_width(), self.window.get_height()))
+        surface = pg.Surface(
+            (self.window.get_width(), self.window.get_height()))
         surface.set_alpha(128)
         surface.fill(self.colors[color])
         self.window.blit(surface, (0, 0))
@@ -116,15 +121,17 @@ class Window:
                     sum_btn_height = size[1] * index_of_qtd[1]
                     sum_gap_btn_height = (size[1] / 2) * (index_of_qtd[1] - 1)
                     btn_set_height = sum_btn_height + sum_gap_btn_height
-                    margin_y   = (self.window.get_height() - btn_set_height) / 2
-                    position_y = margin_y + ((size[1] * 1.5) * (index_of_qtd[0] - 1))
+                    margin_y = (self.window.get_height() - btn_set_height) / 2
+                    position_y = margin_y + \
+                        ((size[1] * 1.5) * (index_of_qtd[0] - 1))
 
         # Button "size"
         size_x = size[0]
         size_y = size[1]
 
         # Draw Button Background
-        pg.draw.rect(self.window, background_color, (position_x, position_y, size_x, size_y))
+        pg.draw.rect(self.window, background_color,
+                     (position_x, position_y, size_x, size_y))
 
         # Hover
         if mouse[0][0] >= position_x and mouse[0][0] <= position_x + size_x and mouse[0][1] >= position_y and mouse[0][1] <= position_y + size_y:
@@ -132,7 +139,8 @@ class Window:
             self.transparent_surface(position_x, position_y, size_x, size_y)
 
         # Draw Button Border
-        pg.draw.rect(self.window, border_color, (position_x, position_y, size_x, size_y), border_width)
+        pg.draw.rect(self.window, border_color, (position_x,
+                     position_y, size_x, size_y), border_width)
 
         # Draw Button Text
         fonte_botao = pg.font.SysFont("Consolas", text_size, bold=True)
@@ -162,9 +170,11 @@ class Window:
 
         for i in range(button_list_len):
             try:
-                button_action[i] = self.botao("center", (300, 100), self.colors[button_list[i][1]], button_list[i][0], self.mouse, index_of_qtd=(i + 1, button_layout[1]), border_color=self.colors[button_list[i][2]])
+                button_action[i] = self.botao("center", (300, 100), self.colors[button_list[i][1]], button_list[i][0], self.mouse, index_of_qtd=(
+                    i + 1, button_layout[1]), border_color=self.colors[button_list[i][2]])
             except:
-                button_action[i] = self.botao("center", (300, 100), self.colors[button_list[i][1]], button_list[i][0], self.mouse, index_of_qtd=(i + 1, button_layout[1]))
+                button_action[i] = self.botao("center", (300, 100), self.colors[button_list[i][1]],
+                                              button_list[i][0], self.mouse, index_of_qtd=(i + 1, button_layout[1]))
 
         for i in range(button_list_len):
             if button_action[i] != None:
@@ -185,7 +195,8 @@ class Window:
             button_action.append(None)
 
         for i in range(button_list_len):
-            button_action[i] = self.botao("center", (300, 100), self.colors[button_list[i][1]], button_list[i][0], self.mouse, index_of_qtd=(i + 1, button_layout[1]))
+            button_action[i] = self.botao("center", (300, 100), self.colors[button_list[i][1]],
+                                          button_list[i][0], self.mouse, index_of_qtd=(i + 1, button_layout[1]))
 
         for i in range(button_list_len):
             if button_action[i] != None:
