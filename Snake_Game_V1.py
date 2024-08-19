@@ -3,6 +3,8 @@ import pygame as pg
 import random
 import time
 
+# aaaaaaaaaaaaaa
+
 
 class Snake_Game:
     def __init__(self):
