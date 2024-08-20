@@ -324,16 +324,16 @@ while True:
         # Pause Screen #############################################################################
         if w.pause_menu == True:
             button_action = w.pause_screen(
-                [('Home Menu', 'green'), ('Restart', 'blue light 2'), ('Quit Game', 'red')], button_layout=(3, 3))
+                [('Menu', 'green'), ('Restart', 'blue light 2'), ('Sair', 'red')], button_layout=(3, 3))
             snake_game.countdown = 3
-            if button_action == 'Home Menu':
+            if button_action == 'Menu':
                 w.pause_menu = False
                 w.home_menu = True
                 snake_game.reset_game()
             elif button_action == 'Restart':
                 w.pause_menu = False
                 snake_game.reset_game()
-            elif button_action == 'Quit Game':
+            elif button_action == 'Sair':
                 pg.quit()
                 quit()
 
