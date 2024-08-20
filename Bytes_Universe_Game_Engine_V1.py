@@ -11,7 +11,7 @@ blue = (0,   0, 255)
 
 
 class Window:
-    def __init__(self, screen_resolution='FHD', window_title='Novo Jogo', icon=None, fps=30):
+    def __init__(self, screen_resolution='HD', window_title='Novo Jogo', icon=None, fps=30):
 
         # Tela do WIndows
         self.resolutions = {

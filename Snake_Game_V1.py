@@ -259,7 +259,7 @@ class Snake_Game:
         self.snake_direction = (-1, 0)
 
 
-w = Window(screen_resolution=(1272, 720))
+w = Window(screen_resolution=(1920, 1080))
 snake_game = Snake_Game()
 
 while True:
