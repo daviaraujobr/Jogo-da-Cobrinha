@@ -4,7 +4,7 @@ import random
 import time
 
 # aaaaaaaaaaaaaaaaaaaaaaaaaa
-# dfnjikb dihfgb ahdiub ghisdfa gihda ihg ih
+# dfnjikb dihfgb ahdiub ghisdfa gihda ihg ih aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 
 class Snake_Game:
