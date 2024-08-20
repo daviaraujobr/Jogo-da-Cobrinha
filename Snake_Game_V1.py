@@ -2,10 +2,6 @@ from Bytes_Universe_Game_Engine_V1 import Window
 import pygame as pg
 import random
 import time
-# vaaaaaiiii
-
-# aaaaaaaaaaaaaaaaaaaaaaaaaa
-# dfnjikb dihfgb ahdiub ghisdfa gihda ihg ih aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 
 class Snake_Game:
