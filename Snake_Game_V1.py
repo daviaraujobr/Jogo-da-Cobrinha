@@ -6,7 +6,8 @@ import time
 
 class Snake_Game:
     def __init__(self):
-        # Game Colors
+
+        # Cores do jogo
         self.color = {
             'black': (0,   0,   0),
             'gray':  (150, 150, 150),
