@@ -186,7 +186,7 @@ class Snake_Game:
 
     def draw_score(self, window):
         score_text = self.font.render(
-            'Score: ' + str(self.score), True, self.color['white'])
+            'Pontos: ' + str(self.score), True, self.color['white'])
         window.blit(score_text, (0, 0))
 
     def end_of_game(self):
