@@ -11,7 +11,7 @@ blue = (0,   0, 255)
 
 
 class Window:
-    def __init__(self, screen_resolution='HD', window_title='Novo Jogo', icon=None, fps=144):
+    def __init__(self, screen_resolution='HD', window_title='Novo Jogo', icon=None, fps=30):
         # Window valiables
         self.resolutions = {
             'HD': (1280, 720),
@@ -61,7 +61,7 @@ class Window:
 
     # times ########################################################################################
 
-    def fps(self, fps=144):
+    def fps(self, fps=30):
         time.sleep(1 / fps)
 
     # Infos ########################################################################################
