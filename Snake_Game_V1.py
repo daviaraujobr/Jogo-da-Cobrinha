@@ -292,7 +292,7 @@ while True:
         # Home Screen Menu #########################################################################
         button_action = w.home_screen([('Start', 'green', 'gray')])
 
-        if button_action == 'Start':
+        if button_action == 'Começar':
             w.home_menu = False
             snake_game.snake_position = [
                 (40, 20), (41, 20), (41, 21), (41, 22), (41, 23), (42, 23)]
